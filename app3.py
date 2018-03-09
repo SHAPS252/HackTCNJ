@@ -14,11 +14,11 @@ client = Client(account_sid, auth_token)
 # Try adding your own number to this list!
 
 scoreval = {
-    "+15512329533": 0,
-    "+12016476485": 0,
+    "+number1": 0,
+    "+number2": 0,
 
 }
-numbers = ["+15512329533", "+12016476485"]
+numbers = ["+number1", "+number2"]
 global t 
 t = random.randint(0,7)
 print(t)
@@ -32,7 +32,7 @@ def hello():
             message = client.messages.create(
         to = y,
         body=List_of_excerpts[t],
-        from_="+12016895776",
+        from_="+twilio-number",
         
         )
             print(message)
@@ -43,7 +43,7 @@ def hello():
             message = client.messages.create(
             to = request.values.get('From'),
             body= "Keep trying!",
-            from_="+12016895776",
+            from_="+twilio-number",
             
             )
             print(message)
@@ -55,7 +55,7 @@ def hello():
                 message = client.messages.create(
             to = y,
             body= scores(),
-            from_="+12016895776",
+            from_="+twilio-number",
             
             )
                 print(message)
@@ -68,7 +68,7 @@ def hello():
                     message = client.messages.create(
                     to = y,
                     body= "Game Over!" + scorecheck_helper(numbers) + " wins! \n" +"New Game!",
-                    from_="+12016895776",
+                    from_="+twilio-number",
                     
                     )
                     print(message)
@@ -144,7 +144,7 @@ if __name__ == "__main__":
             message = client.messages.create(
         to = y,
         body=List_of_excerpts[t],
-        from_="+12016895776",
+        from_="+twilio-number",
         
         )
             print(message)
